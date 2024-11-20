@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>استطلاع رأي: استراتيجية حل المشكلات</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>استطلاع رأي: استراتيجية حل المشكلات</h1>
+        
+        <!-- نموذج إدخال اسم المستخدم -->
+        <div id="username-form">
+            <label for="username">أدخل اسم المستخدم:</label>
+            <input type="text" id="username" placeholder="اسم المستخدم">
+            <button onclick="startSurvey()">ابدأ الاستطلاع</button>
+        </div>
+
+        <!-- نموذج الاستطلاع -->
+        <div id="survey-form" style="display:none;">
+            <h2>أجب على الأسئلة التالية</h2>
+            <form id="survey">
+                <div class="question">
+                    <p>هل تعتقد أن استراتيجية حل المشكلات فعالة في تعزيز التفكير النقدي؟</p>
+                    <input type="radio" name="q1" value="نعم"> نعم
+                    <input type="radio" name="q1" value="لا"> لا
+                </div>
+                <div class="question">
+                    <p>هل تساهم استراتيجية حل المشكلات في تحسين التعاون بين الأفراد؟</p>
+                    <input type="radio" name="q2" value="نعم"> نعم
+                    <input type="radio" name="q2" value="لا"> لا
+                </div>
+                <button type="button" onclick="submitSurvey()">إرسال</button>
+            </form>
+        </div>
+
+        <!-- عرض النتائج -->
+        <div id="results" style="display:none;">
+            <h2>نتائج الاستطلاع</h2>
+            <canvas id="results-chart"></canvas>
+            <button onclick="shareResults()">مشاركة النتائج</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
